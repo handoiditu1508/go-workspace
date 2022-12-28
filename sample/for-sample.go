@@ -1,6 +1,8 @@
 package sample
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func RunForIterationSample() {
 	var i int
@@ -14,7 +16,14 @@ func RunForIterationSample() {
 
 	// foreach
 	numbers := []int{2, 4, 6, 8, 10}
-	for _, number := range numbers {
-		fmt.Println(number)
+	for index, number := range numbers {
+		fmt.Println(index, number)
+	}
+
+	dictionary := make(map[string]int)
+	dictionary["abc"] = 12
+	dictionary["xyz"] = 456
+	for key, value := range dictionary {
+		fmt.Println(key, value)
 	}
 }

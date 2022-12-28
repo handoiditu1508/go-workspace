@@ -29,9 +29,13 @@ func RunArraySample() {
 
 	// display data
 	fmt.Println(">>>>>display array data")
+	// in Go, array is value type, slice is reference type
+	var numbers2 = numbers
+	numbers2[0] = 26
 	for i := 0; i < 5; i++ {
 		fmt.Println(numbers[i])
 		fmt.Println(cities[i])
+		fmt.Println(numbers2[i])
 	}
 
 	// display matrix data
