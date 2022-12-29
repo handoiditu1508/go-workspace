@@ -1,6 +1,12 @@
 package main
 
-import "testmodule/sample"
+import (
+	"log"
+	"net/http"
+	"testmodule/muxsample"
+
+	"github.com/gorilla/mux"
+)
 
 // func main() {
 // 	// fmt.Println(smallestAppearTimes.InvokesmallestAppearTimes1("00-44  48 5555 8361"))
@@ -56,6 +62,22 @@ import "testmodule/sample"
 // 	fmt.Println(exercise2.InvokeNotification("Hello world", 9))
 // }
 
+// func main() {
+// 	sample.RunChannelSample()
+// }
+
+func initializeRouter() {
+	r := mux.NewRouter()
+	r.HandleFunc("/users", muxsample.GetUsers).Methods("GET")
+	r.HandleFunc("/users/{id}", muxsample.GetUser).Methods("GET")
+	r.HandleFunc("/users", muxsample.CreateUser).Methods("POST")
+	r.HandleFunc("/users/{id}", muxsample.UpdateUser).Methods("PUT")
+	r.HandleFunc("/users/{id}", muxsample.DeleteUser).Methods("DELETE")
+
+	log.Fatal(http.ListenAndServe(":9000", r))
+}
+
 func main() {
-	sample.RunDeferSample()
+	muxsample.InitialMigration()
+	initializeRouter()
 }
