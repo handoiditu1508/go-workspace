@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-	"testmodule/muxsample"
+	"testmodule/muxsample2"
 
 	"github.com/gorilla/mux"
 )
@@ -63,21 +63,35 @@ import (
 // }
 
 // func main() {
-// 	sample.RunChannelSample()
+// 	sample.RunSlice2Sample()
 // }
 
-func initializeRouter() {
-	r := mux.NewRouter()
-	r.HandleFunc("/users", muxsample.GetUsers).Methods("GET")
-	r.HandleFunc("/users/{id}", muxsample.GetUser).Methods("GET")
-	r.HandleFunc("/users", muxsample.CreateUser).Methods("POST")
-	r.HandleFunc("/users/{id}", muxsample.UpdateUser).Methods("PUT")
-	r.HandleFunc("/users/{id}", muxsample.DeleteUser).Methods("DELETE")
-
-	log.Fatal(http.ListenAndServe(":9000", r))
-}
+// func initializeRouter() {
+// 	r := mux.NewRouter()
+// 	r.HandleFunc("/users", muxsample.GetUsers).Methods("GET")
+// 	r.HandleFunc("/users/{id}", muxsample.GetUser).Methods("GET")
+// 	r.HandleFunc("/users", muxsample.CreateUser).Methods("POST")
+// 	r.HandleFunc("/users/{id}", muxsample.UpdateUser).Methods("PUT")
+// 	r.HandleFunc("/users/{id}", muxsample.DeleteUser).Methods("DELETE")
+// 	log.Fatal(http.ListenAndServe(":9000", r))
+// }
+// func main() {
+// 	muxsample.InitialMigration()
+// 	initializeRouter()
+// }
 
 func main() {
-	muxsample.InitialMigration()
-	initializeRouter()
+	// Init Router
+	r := mux.NewRouter()
+
+	// Mock Data
+	muxsample2.MockData()
+
+	// Route Handlers / Endpoints
+	r.HandleFunc("/api/books", muxsample2.GetBooks).Methods("GET")
+	r.HandleFunc("/api/books/{id}", muxsample2.GetBook).Methods("GET")
+	r.HandleFunc("/api/books", muxsample2.CreateBook).Methods("POST")
+	r.HandleFunc("/api/books/{id}", muxsample2.UpdateBook).Methods("PUT")
+	r.HandleFunc("/api/books/{id}", muxsample2.DeleteBook).Methods("DELETE")
+	log.Fatal(http.ListenAndServe(":8000", r))
 }
