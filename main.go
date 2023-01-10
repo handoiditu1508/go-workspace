@@ -3,9 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-	"testmodule/muxsample2"
-
-	"github.com/gorilla/mux"
+	"testmodule/jwtsample"
 )
 
 // func main() {
@@ -80,18 +78,26 @@ import (
 // 	initializeRouter()
 // }
 
+// func main() {
+// 	// Init Router
+// 	r := mux.NewRouter()
+
+// 	// Mock Data
+// 	muxsample2.MockData()
+
+// 	// Route Handlers / Endpoints
+// 	r.HandleFunc("/api/books", muxsample2.GetBooks).Methods("GET")
+// 	r.HandleFunc("/api/books/{id}", muxsample2.GetBook).Methods("GET")
+// 	r.HandleFunc("/api/books", muxsample2.CreateBook).Methods("POST")
+// 	r.HandleFunc("/api/books/{id}", muxsample2.UpdateBook).Methods("PUT")
+// 	r.HandleFunc("/api/books/{id}", muxsample2.DeleteBook).Methods("DELETE")
+// 	log.Fatal(http.ListenAndServe(":8000", r))
+// }
+
 func main() {
-	// Init Router
-	r := mux.NewRouter()
+	http.HandleFunc("/login", jwtsample.Login)
+	http.HandleFunc("/home", jwtsample.Home)
+	http.HandleFunc("/refresh", jwtsample.Refresh)
 
-	// Mock Data
-	muxsample2.MockData()
-
-	// Route Handlers / Endpoints
-	r.HandleFunc("/api/books", muxsample2.GetBooks).Methods("GET")
-	r.HandleFunc("/api/books/{id}", muxsample2.GetBook).Methods("GET")
-	r.HandleFunc("/api/books", muxsample2.CreateBook).Methods("POST")
-	r.HandleFunc("/api/books/{id}", muxsample2.UpdateBook).Methods("PUT")
-	r.HandleFunc("/api/books/{id}", muxsample2.DeleteBook).Methods("DELETE")
-	log.Fatal(http.ListenAndServe(":8000", r))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
