@@ -17,6 +17,7 @@ func RunStructSample() {
 	var emp Employee
 	newEmp := new(Employee)
 	newEmp2 := Employee{1, "Employee 1", "VN", time.Now()}
+	newEmp3 := emp // pass by value, emp changes won't affect newEmp3
 
 	// set values
 	emp.id = 2
@@ -39,4 +40,5 @@ func RunStructSample() {
 	fmt.Println(newEmp.created)
 	fmt.Println("=====================")
 	fmt.Println(newEmp2)
+	fmt.Println(newEmp3)
 }

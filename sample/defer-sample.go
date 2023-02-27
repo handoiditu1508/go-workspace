@@ -33,7 +33,7 @@ func test2() {
 	}
 }
 
-// Deferred functions may read and assign to the returning function’s named return values
+// Deferred functions may read and assign to {the returning function}’s {named return values}
 // this function returns 2
 func test3() (i int) {
 	defer func() { i++ }()

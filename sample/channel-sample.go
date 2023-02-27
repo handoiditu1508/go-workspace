@@ -30,4 +30,9 @@ func RunChannelSample() {
 	} else {
 		fmt.Println("channel still open")
 	}
+
+	// press ENTER to exit
+	var input string
+	fmt.Scanln(&input)
+	fmt.Println("done")
 }
