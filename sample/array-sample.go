@@ -37,6 +37,21 @@ func RunArraySample() {
 		fmt.Println(cities[i])
 		fmt.Println(numbers2[i])
 	}
+	// 0
+	// City 0
+	// 26
+	// 1
+	// City 1
+	// 1
+	// 2
+	// City 2
+	// 2
+	// 3
+	// City 3
+	// 3
+	// 4
+	// City 4
+	// 4
 
 	// display matrix data
 	fmt.Println(">>>>>display matrix data")
@@ -45,4 +60,13 @@ func RunArraySample() {
 			fmt.Println(matrix[i][j])
 		}
 	}
+	// 81
+	// 87
+	// 47
+	// 59
+	// 81
+	// 18
+	// 25
+	// 40
+	// 56
 }

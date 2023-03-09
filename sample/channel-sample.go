@@ -36,3 +36,12 @@ func RunChannelSample() {
 	fmt.Scanln(&input)
 	fmt.Println("done")
 }
+
+// simple channel
+// no more routine
+// goroutine process
+// another goroutine process
+// another goroutine read from channel: 20
+// value: 10
+// channel still open
+// done

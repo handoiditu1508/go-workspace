@@ -11,15 +11,15 @@ func RunArithmeticSample() {
 	// arithmetic operation
 	// addition
 	c := a + b
-	fmt.Printf("%d + %d = %d \n", a, b, c)
+	fmt.Printf("%d + %d = %d \n", a, b, c) // 5 + 10 = 15
 	// subtraction
 	d := a - b
-	fmt.Printf("%d - %d = %d \n", a, b, d)
+	fmt.Printf("%d - %d = %d \n", a, b, d) // 5 - 10 = -5
 	// division
 	e := float32(a) / float32(b)
-	fmt.Printf("%d / %d = %.2f \n", a, b, e)
+	fmt.Printf("%d / %d = %.2f \n", a, b, e) // 5 / 10 = 0.50
 	// multiplication
 	f := a * b
-	fmt.Printf("%d * %d = %d \n", a, b, f)
+	fmt.Printf("%d * %d = %d \n", a, b, f) // 5 * 10 = 50
 
 }
