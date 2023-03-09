@@ -58,6 +58,12 @@ import (
 // 	// fmt.Println(exercise2.InvokeNotification("There is an animal with four legs", 15))
 // 	// fmt.Println(exercise2.InvokeNotification("super dog", 4))
 // 	fmt.Println(exercise2.InvokeNotification("Hello world", 9))
+
+// 	// fmt.Println(exercise2.InvokeFullGameCount("12:01", "12:44"))
+// 	// fmt.Println(exercise2.InvokeFullGameCount("20:00", "06:00"))
+// 	// fmt.Println(exercise2.InvokeFullGameCount("00:00", "23:59"))
+// 	// fmt.Println(exercise2.InvokeFullGameCount("12:03", "12:03"))
+// 	// fmt.Println(exercise2.InvokeFullGameCount("11:59", "12:19"))
 // }
 
 // func main() {
