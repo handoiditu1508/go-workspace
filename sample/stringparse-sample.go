@@ -18,6 +18,14 @@ func RunStringParseSample() {
 		fmt.Println(err)
 	}
 
+	var int2 int
+	int2, err = strconv.Atoi(str1)
+	if err == nil {
+		fmt.Println(int2)
+	} else {
+		fmt.Println(err)
+	}
+
 	var float2 float64
 	float2, err = strconv.ParseFloat(str2, 64)
 	if err == nil {

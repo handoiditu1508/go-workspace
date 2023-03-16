@@ -10,6 +10,9 @@ func RunSlice2Sample() {
 	fmt.Println("Length: ", len(intSlice), " Contents: ", intSlice, " Capacity: ", cap(intSlice)) // Length:  3  Contents:  [1 2 3]  Capacity:  8
 	// slice length depend on where slice's start index and end index
 
+	// update {intSlice} will affect {intArray}
+	//intSlice[1] = 33
+
 	intSlice2 := append(intSlice, 10)
 	fmt.Println(intArray)
 	fmt.Println("Length: ", len(intSlice), " Contents: ", intSlice, " Capacity: ", cap(intSlice))
